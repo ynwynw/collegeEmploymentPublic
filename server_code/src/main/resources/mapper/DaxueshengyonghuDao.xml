@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.DaxueshengyonghuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.DaxueshengyonghuEntity" id="daxueshengyonghuMap">
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="mima" column="mima"/>
+        <result property="xingming" column="xingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shouji" column="shouji"/>
+        <result property="zhuanyemingcheng" column="zhuanyemingcheng"/>
+        <result property="jingyan" column="jingyan"/>
+        <result property="nianling" column="nianling"/>
+        <result property="xueli" column="xueli"/>
+        <result property="gerenyoushi" column="gerenyoushi"/>
+        <result property="jingli" column="jingli"/>
+        <result property="touxiang" column="touxiang"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.DaxueshengyonghuView" >
+
+		SELECT  daxueshengyonghu.* FROM daxueshengyonghu  daxueshengyonghu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.DaxueshengyonghuView" >
+		SELECT * FROM daxueshengyonghu  daxueshengyonghu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
